@@ -2,7 +2,7 @@ language: node_js
 node_js:
   - "0.10"
 before_script:
-  - sudo apt-get install openssh-server
+  - node travis/install-openssh-server.js
   - cat /etc/ssh/sshd_config
   - ssh-keygen -t dsa
   - ssh-copy-id username@remotehost
