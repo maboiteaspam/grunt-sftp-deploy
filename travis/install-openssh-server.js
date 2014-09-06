@@ -5,11 +5,13 @@ var spawn = require('child_process').spawn;
 
 var ls    = spawn('sudo', ['apt-get', 'install', 'openssh-server']);
 
+var t_out = setTimeout(function(){
+  console.log('stdin: \n');
+  ls.stdin.write("\n")
+},1000);
+
 ls.stdout.on('data', function (data) {
   console.log('stdout: ' + data);
-  if( data.toString().match(/Enter file in which to save the key/) ){
-    ls.stdin.write("\n")
-  }
 });
 
 ls.stderr.on('data', function (data) {
@@ -17,5 +19,6 @@ ls.stderr.on('data', function (data) {
 });
 
 ls.on('close', function (code) {
+  clearTimeout(t_out);
   console.log('child process exited with code ' + code);
 });
