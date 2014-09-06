@@ -13,8 +13,12 @@ ls.stderr.on('data', function (data) {
   console.log('stderr: ' + data);
   if( data.toString().match(/Enter file in which to save the key/) ){
     ls.stdin.write("\n")
+    console.log('pending');
     setTimeout(function(){
+      console.log('done');
       ls.stdin.write("\n")
+      ls.stderr.write("\n")
+      data.write("\n")
     },1000);
   }
 });
