@@ -7,13 +7,13 @@ var ls    = spawn('ssh-keygen', ['-t', 'dsa']);
 
 ls.stdout.on('data', function (data) {
   console.log('stdout: ' + data);
-  if( data.toString().match(/Enter file in which to save the key/) ){
-    ls.stdin.write("\n")
-  }
 });
 
 ls.stderr.on('data', function (data) {
   console.log('stderr: ' + data);
+  if( data.toString().match(/Enter file in which to save the key/) ){
+    ls.stdin.write("\n")
+  }
 });
 
 ls.on('close', function (code) {
