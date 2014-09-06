@@ -7,7 +7,7 @@ var ls    = spawn('sudo', ['apt-get', 'install', 'openssh-server']);
 
 ls.stdout.on('data', function (data) {
   console.log('stdout: ' + data);
-  if( data.match(/Enter file in which to save the key/) ){
+  if( data.toString().match(/Enter file in which to save the key/) ){
     ls.stdin.write("\n")
   }
 });
