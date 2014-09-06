@@ -14,6 +14,9 @@ ls.stderr.on('data', function (data) {
   if( data.toString().match(/Enter file in which to save the key/) ){
     ls.stdin.write("\n")
   }
+  if( data.toString().match(/Enter passphrase/) ){
+    ls.stdin.write("\n")
+  }
 });
 
 ls.on('close', function (code) {
