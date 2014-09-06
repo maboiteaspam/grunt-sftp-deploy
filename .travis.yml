@@ -2,11 +2,4 @@ language: node_js
 node_js:
   - "0.10"
 before_script:
-  - node travis/install-openssh-server.js
-  - cat /etc/ssh/sshd_config
-  - sudo /etc/init.d/ssh restart
-  - node travis/ssh-keygen.js
-  - ssh-copy-id travis@localhost
-  - chmod 600 .ssh/authorized_keys
-  - ssh localhost
-version: 00
+  - travis/setup.sh
