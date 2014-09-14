@@ -1,7 +1,7 @@
 #!/usr/bin/expect -f
 spawn ssh-copy-id $argv
 expect "password:"
-send "\n"
+send "\r"
 expect "Are you sure you want to continue connecting (yes/no)? "
-send "\n"
+send "\r"
 expect eof
