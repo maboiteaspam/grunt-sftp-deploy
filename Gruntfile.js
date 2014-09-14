@@ -4,6 +4,7 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         // Configuration to be run (and then tested).
+        debug:true,
         'sftp-deploy': {
             wrong_host: {
                 auth: {
@@ -17,7 +18,7 @@ module.exports = function(grunt) {
                 exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
                 serverSep: '/',
                 concurrency: 4,
-                progress: true
+                progress: false
             }
         }
     });
