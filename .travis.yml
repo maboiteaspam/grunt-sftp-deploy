@@ -10,7 +10,7 @@ before_install:
   - ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
   - sudo /etc/init.d/ssh restart
   - ls -al ~/.ssh/
-  - chamod +x ssh-copy-id.sh
+  - chmod +x ssh-copy-id.sh
   - ssh-copy-id.sh travis@localhost
   - chmod 600 ~/.ssh/authorized_keys
   - ssh localhost
