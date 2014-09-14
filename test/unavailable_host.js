@@ -9,11 +9,12 @@ var log_stdout = argv_str.match("--stdout") || process.env["TEST_STDOUT"];
 var log_verbose = argv_str.match("--verbose") || process.env["TEST_VERBOSE"];
 var log_debug = argv_str.match("--debug") || process.env["TEST_DEBUG"];
 
+log_verbose = true;
+
 describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
 
     this.slow(2500);
     this.timeout(5000);
-    var Gruntfile = require("../Gruntfile.js");
 
     before(function(){
         var auth = {
@@ -44,7 +45,6 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
             }
         };
         grunt.file.write(".ftppass", JSON.stringify(auth));
-        Gruntfile(grunt);
     })
 
     it('should fail nicely when host is unknown', function(done) {
