@@ -32,6 +32,7 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
     it('should transfer files correctly with private key', function(done) {
         open_grunt(['sftp-deploy:ok_transfer_privateKey'],function(code,stdout,stderr){
             stdout.should.match(/Connection :: connect/);
+            stdout.should.match(/Transferred : 0[.][0-9]{3,} Mb/);
             done();
         })
     });
