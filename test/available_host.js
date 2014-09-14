@@ -16,19 +16,12 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
     this.slow(2500);
     this.timeout(10000);
 
-    it('should fail nicely when host is unknown', function(done) {
-        open_grunt(['sftp-deploy:wrong_host'],function(code,stdout,stderr){
-            stdout.should.match(/Fatal error: Connection :: error/);
+    it('should fff', function(done) {
+        open_grunt(['sftp-deploy:ok_host'],function(code,stdout,stderr){
             done();
         })
     });
 
-    it('should fail nicely when port is incorrect', function(done) {
-        open_grunt(['sftp-deploy:wrong_port'],function(code,stdout,stderr){
-            stdout.should.match(/Fatal error: Connection :: error/);
-            done();
-        })
-    });
 });
 
 function open_grunt(args,cb){

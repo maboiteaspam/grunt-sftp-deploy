@@ -4,7 +4,6 @@ module.exports = function(grunt) {
     // Project configuration.
     grunt.initConfig({
         // Configuration to be run (and then tested).
-        debug:true,
         'sftp-deploy': {
             wrong_host: {
                 auth: {
@@ -13,8 +12,36 @@ module.exports = function(grunt) {
                     authKey: 'privateKey'
                 },
                 cache: 'sftpCache.json',
-                src: '/path/to/source/folder',
-                dest: '/path/to/destination/folder',
+                src: 'test/fixture/src',
+                dest: 'test/fixture/dest',
+                exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
+                serverSep: '/',
+                concurrency: 4,
+                progress: false
+            },
+            wrong_port: {
+                auth: {
+                    host: 'localhost',
+                    port: 22222,
+                    authKey: 'privateKey'
+                },
+                cache: 'sftpCache.json',
+                src: 'test/fixture/src',
+                dest: 'test/fixture/dest',
+                exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
+                serverSep: '/',
+                concurrency: 4,
+                progress: false
+            },
+            ok_host: {
+                auth: {
+                    host: 'localhost',
+                    port: 22,
+                    authKey: 'privateKey'
+                },
+                cache: 'sftpCache.json',
+                src: 'test/fixture/src',
+                dest: 'test/fixture/dest',
                 exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
                 serverSep: '/',
                 concurrency: 4,
@@ -22,6 +49,35 @@ module.exports = function(grunt) {
             }
         }
     });
+
+    var auth = {
+        "key1": {
+            "username": "username1",
+            "password": "password1"
+        },
+        "key2": {
+            "username": "username2",
+            "password": "password2"
+        },
+        "privateKey": {
+            "username": "username"
+        },
+        "privateKeyEncrypted": {
+            "username": "username",
+            "passphrase": "passphrase1"
+        },
+        "privateKeyCustom": {
+            "username": "username",
+            "passphrase": "passphrase1",
+            "keyLocation": "/full/path/to/key"
+        },
+        "privateKeyCustomByFileName": {
+            "username": "username",
+            "passphrase": "passphrase2",
+            "keyLocation": "filename-of-key"
+        }
+    };
+    grunt.file.write(".ftppass", JSON.stringify(auth));
 
     grunt.loadTasks('tasks');
 };
