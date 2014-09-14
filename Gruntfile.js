@@ -12,7 +12,7 @@ module.exports = function(grunt) {
                     authKey: 'privateKey'
                 },
                 cache: 'sftpCache.json',
-                src: '~/build/maboiteaspam/grunt-sftp-deploy/test/fixture/src',
+                src: 'test/fixture/src',
                 dest: '~/build/maboiteaspam/grunt-sftp-deploy/test/fixture/dest',
                 exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
                 serverSep: '/',
@@ -26,7 +26,7 @@ module.exports = function(grunt) {
                     authKey: 'privateKey'
                 },
                 cache: 'sftpCache.json',
-                src: '~/build/maboiteaspam/grunt-sftp-deploy/test/fixture/src',
+                src: 'test/fixture/src',
                 dest: '~/build/maboiteaspam/grunt-sftp-deploy/test/fixture/dest',
                 exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
                 serverSep: '/',
@@ -40,7 +40,7 @@ module.exports = function(grunt) {
                     authKey: 'privateKey'
                 },
                 cache: 'sftpCache.json',
-                src: '~/build/maboiteaspam/grunt-sftp-deploy/test/fixture/src',
+                src: 'test/fixture/src',
                 dest: '~/build/maboiteaspam/grunt-sftp-deploy/test/fixture/dest',
                 exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
                 serverSep: '/',
@@ -54,7 +54,7 @@ module.exports = function(grunt) {
                     authKey: 'privateKey'
                 },
                 cache: 'sftpCache.json',
-                src: '~/build/maboiteaspam/grunt-sftp-deploy/test/fixture/src',
+                src: 'test/fixture/src',
                 dest: '~/build/maboiteaspam/grunt-sftp-deploy/test/fixture/dest',
                 exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
                 serverSep: '/',
