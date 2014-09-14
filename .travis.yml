@@ -16,4 +16,4 @@ before_install:
   - ssh-keyscan -t rsa,dsa localhost
   - ssh-keyscan -t rsa,dsa localhost 2>&1 | sort -u - ~/.ssh/known_hosts > ~/.ssh/tmp_hosts
   - cat ~/.ssh/tmp_hosts >> ~/.ssh/known_hosts
-  - sshpass -p '' ssh localhost
+  - ssh localhost
