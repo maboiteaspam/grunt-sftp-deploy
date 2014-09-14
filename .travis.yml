@@ -9,4 +9,6 @@ before_install:
   - ssh-keygen -t dsa -f ~/.ssh/id_dsa -N ''
   - ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
   - sudo /etc/init.d/ssh restart
-  - sudo sshpass -p '' ssh -oStrictHostKeyChecking=no -oCheckHostIP=no localhost
+  - ssh-keyscan -t rsa,dsa HOST 2>&1 | sort -u - ~/.ssh/known_hosts > ~/.ssh/tmp_hosts
+  - cat ~/.ssh/tmp_hosts >> ~/.ssh/known_hosts
+  - sshpass -p '' ssh localhost
