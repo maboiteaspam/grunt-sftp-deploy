@@ -62,7 +62,7 @@ module.exports = function(grunt) {
             "password": "password2"
         },
         "privateKey": {
-            "username": "username"
+            "username": "travis"
         },
         "privateKeyEncrypted": {
             "username": "username",
