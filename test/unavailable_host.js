@@ -61,7 +61,7 @@ function open_grunt(args,cb){
     if( log_debug ){
         args.push("--debug");
     }
-    if( log_verbose ){
+    if( log_verbose || log_stdout){
         args.push("--verbose");
         log.info('stdout', '', "");
         log.info('stdout', '', "");
