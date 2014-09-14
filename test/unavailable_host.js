@@ -48,10 +48,36 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
     })
 
     it('should fail nicely when host is unknown', function(done) {
-        grunt.task.registerTask('done',function(){
-            console.log("helloddd...")
-        });
-        grunt.task.run('sftp-deploy:wrong_host','done');
-        console.log("hello...")
+        open_grunt(['sftp:deploy:wrong_host'],function(){
+            done();
+        })
     });
 });
+
+function open_grunt(args,cb){
+    var stdout = "";
+    var stderr = "";
+    args.unshift("grunt");
+    if( log_debug ){
+        args.push("--debug");
+    }
+    if( log_verbose ){
+        args.push("--verbose");
+        log.info('stdout', '', "");
+        log.info('stdout', '', "");
+        log.info('stdout', '', "node"+args.join(" "));
+    }
+    var grunt_process = require('child_process').spawn("node", args);
+    grunt_process.stdout.on('data', function (data) {
+        log.info('stdout', '', data.toString().trim());
+        stdout+=data.toString();
+    });
+    grunt_process.stderr.on('data', function (data) {
+        log.info('stderr', '', data.toString().trim());
+        stderr+=data.toString();
+    });
+    grunt_process.on('exit', function (code) {
+        if(cb) cb(code,stdout,stderr);
+    });
+    return grunt_process;
+}
