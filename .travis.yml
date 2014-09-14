@@ -5,15 +5,13 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-get install --yes openssh-server
   - sudo apt-get install --yes sshpass
-  - sudo apt-get install --yes expect
-  - ssh-keygen -t dsa -f ~/.ssh/id_dsa -N ''
   - ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
   - echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - chmod 600 ~/.ssh/id_rsa*
   - eval `ssh-agent -s`
   - ssh-add ~/.ssh/id_rsa
   - sudo /etc/init.d/ssh restart
-  - ssh-keyscan -t rsa,dsa localhost 2>&1 | sort -u - ~/.ssh/known_hosts > ~/.ssh/tmp_hosts
+  - ssh-keyscan -t rsa localhost 2>&1 | sort -u - ~/.ssh/known_hosts > ~/.ssh/tmp_hosts
   - cat ~/.ssh/tmp_hosts >> ~/.ssh/known_hosts
   - cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
   - ssh localhost ls
