@@ -51,7 +51,6 @@ module.exports = function(grunt) {
     });
 
     grunt.file.mkdir("test/fixture/src")
-    grunt.file.mkdir("test/fixture/dest")
     var auth = {
         "key1": {
             "username": "username1",
