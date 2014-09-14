@@ -13,7 +13,7 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
 
     this.slow(2500);
     this.timeout(5000);
-    var Gruntfile = require("Gruntfile.js");
+    var Gruntfile = require("Gruntfile");
 
     before(function(){
         var auth = {
