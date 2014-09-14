@@ -17,14 +17,14 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
     this.timeout(10000);
 
     before(function(){
-        grunt.file.mkdir("test/fixture/src")
-        grunt.file.write("test/fixture/src/test1","test1")
-        grunt.file.mkdir("test/fixture/dest")
+        grunt.file.mkdir("fixture/src")
+        grunt.file.write("fixture/src/test1","test1")
+        grunt.file.mkdir("fixture/dest")
     });
 
     after(function(){
-        grunt.file.delete("test/fixture/src")
-        grunt.file.delete("test/fixture/dest")
+        grunt.file.delete("fixture/src")
+        grunt.file.delete("fixture/dest")
     });
 
     it('should transfer files correctly with private key', function(done) {
