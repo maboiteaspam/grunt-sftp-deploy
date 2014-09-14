@@ -5,6 +5,7 @@ before_install:
   - sudo apt-get update -qq
   - sudo apt-get install --yes openssh-server
   - sudo apt-get install --yes sshpass
+  - npm install -g grunt-cli
   - ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
   - echo -e "Host *\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
   - chmod 600 ~/.ssh/id_rsa*
