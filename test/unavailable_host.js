@@ -65,5 +65,6 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
             }
         });
         grunt.task.registerTask('dist', ['sftp-deploy:build']);
+        grunt.task.run('dist');
     });
 });
