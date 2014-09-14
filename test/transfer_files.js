@@ -26,6 +26,7 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
     after(function(){
         grunt.file.delete("test/fixture/src")
         grunt.file.delete("test/fixture/dest")
+        grunt.file.delete("sftpCache.json")
     });
 
     it('should transfer files correctly with private key', function(done) {
