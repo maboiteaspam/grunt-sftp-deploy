@@ -55,7 +55,7 @@ module.exports = function(grunt) {
                 },
                 cache: 'sftpCache.json',
                 src: 'test/fixture/src',
-                dest: '~/build/maboiteaspam/grunt-sftp-deploy/test/fixture/dest',
+                dest: '/home/travis/build/maboiteaspam/grunt-sftp-deploy/test/fixture/dest',
                 exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
                 serverSep: '/',
                 concurrency: 4,
