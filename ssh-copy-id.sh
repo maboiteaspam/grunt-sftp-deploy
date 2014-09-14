@@ -2,7 +2,6 @@
 spawn ssh-copy-id $argv
 expect "password:"
 send "\n"
-expect eof
-expect "ant to continue connecting :"
+expect "Are you sure you want to continue connecting (yes/no)? "
 send "\n"
 expect eof
