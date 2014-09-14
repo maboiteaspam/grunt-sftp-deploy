@@ -20,7 +20,7 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
         grunt.file.mkdir("test/fixture/src")
         grunt.file.mkdir("test/fixture/dest")
         console.log(
-            grunt.file.expand("./")
+            grunt.file.expand("./**")
         )
     });
 
