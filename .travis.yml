@@ -9,4 +9,4 @@ before_install:
   - ssh-keygen -t dsa -f ~/.ssh/id_dsa -N ''
   - ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
   - sudo /etc/init.d/ssh restart
-  - sshpass -p '' ssh -oStrictHostKeyChecking=no -oCheckHostIP=no localhost
+  - sudo sshpass -p '' ssh -oStrictHostKeyChecking=no -oCheckHostIP=no localhost
