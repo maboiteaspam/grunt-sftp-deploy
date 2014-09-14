@@ -13,6 +13,7 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
 
     this.slow(2500);
     this.timeout(5000);
+    var Gruntfile = require("Gruntfile.js");
 
     before(function(){
         var auth = {
@@ -43,30 +44,13 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
             }
         };
         grunt.file.write(".ftppass", JSON.stringify(auth));
+        Gruntfile(grunt);
     })
 
     it('should fail nicely when host is unknown', function(done) {
-        grunt.initConfig({
-            'sftp-deploy': {
-                build: {
-                    auth: {
-                        host: 'not-a-valid-server-address.whatever',
-                        port: 22,
-                        authKey: 'privateKey'
-                    },
-                    cache: 'sftpCache.json',
-                    src: '/path/to/source/folder',
-                    dest: '/path/to/destination/folder',
-                    exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
-                    serverSep: '/',
-                    concurrency: 4,
-                    progress: true
-                }
-            }
+        grunt.task.run('sftp-deploy:wrong_host',function(){
+            console.log("hello..cxwc.")
         });
-        grunt.task.registerTask('done', done);
-        grunt.task.registerTask('dist', ['sftp-deploy:build','done']);
-        grunt.task.run('dist');
         console.log("hello...")
     });
 });
