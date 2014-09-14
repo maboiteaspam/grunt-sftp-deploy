@@ -1,4 +1,4 @@
 -include test/test.env
 
 test_all:
-	./node_modules/mocha/bin/mocha --verbose --reporter spec
+	./node_modules/mocha/bin/mocha --reporter spec -- --verbose
