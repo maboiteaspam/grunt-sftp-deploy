@@ -11,4 +11,5 @@ before_install:
   - sudo /etc/init.d/ssh restart
   - ssh-keyscan -t rsa,dsa HOST 2>&1 | sort -u - ~/.ssh/known_hosts > ~/.ssh/tmp_hosts
   - cat ~/.ssh/tmp_hosts >> ~/.ssh/known_hosts
-  - sshpass -p '' ssh localhost
+  - cat ~/.ssh/known_hosts
+  - ssh localhost
