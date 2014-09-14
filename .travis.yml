@@ -15,7 +15,3 @@ before_install:
   - ssh-keyscan -t rsa localhost 2>&1 | sort -u - ~/.ssh/known_hosts > ~/.ssh/tmp_hosts
   - cat ~/.ssh/tmp_hosts >> ~/.ssh/known_hosts
   - cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-  - ssh localhost ls
-  - ssh localhost pwd
-  - pwd
-  - ls
