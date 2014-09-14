@@ -14,7 +14,7 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
     this.slow(2500);
     this.timeout(5000);
 
-    this.before(function(){
+    before(function(){
         var auth = {
             "key1": {
                 "username": "username1",
