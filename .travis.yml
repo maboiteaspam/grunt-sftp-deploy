@@ -4,12 +4,11 @@ node_js:
 before_install:
   - sudo apt-get update -qq
   - sudo apt-get install --yes openssh-server
-  - sudo apt-get install sshpass
   - sudo /etc/init.d/ssh restart
   - ssh-keygen -t dsa -f ~/.ssh/id_dsa -N ''
   - ssh-keygen -t rsa -f ~/.ssh/id_rsa -N ''
   - sudo /etc/init.d/ssh restart
   - ls -al ~/.ssh/
-  - sshpass -p '' ssh-copy-id travis@localhost
+  - sh ssh-copy-id.sh travis@localhost
   - chmod 600 ~/.ssh/authorized_keys
   - ssh localhost
