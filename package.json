@@ -36,5 +36,8 @@
   "keywords": [
     "gruntplugin", "sftp", "deployment"
   ],
-  "readmeFilename": "README.md"
+  "readmeFilename": "README.md",
+  "scripts": {
+    "test": "make test_all"
+  }
 }
