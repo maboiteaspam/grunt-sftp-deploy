@@ -48,7 +48,7 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
     })
 
     it('should fail nicely when host is unknown', function(done) {
-        grunt.task.run('sftp-deploy:wrong_host',function(){
+        grunt.task.run('sftp-deploy:wrong_host',null,function(){
             console.log("hello..cxwc.")
         });
         console.log("hello...")
