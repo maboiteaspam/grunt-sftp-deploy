@@ -16,3 +16,6 @@ before_install:
   - cat ~/.ssh/tmp_hosts >> ~/.ssh/known_hosts
   - cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
   - ssh localhost ls
+  - ssh localhost pwd
+  - pwd
+  - ls
