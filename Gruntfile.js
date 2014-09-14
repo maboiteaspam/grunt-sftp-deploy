@@ -26,5 +26,5 @@ module.exports = function(grunt) {
     grunt.loadTasks('tasks');
 
     // These plugins provide necessary tasks.
-    grunt.loadNpmTasks('grunt-sftp-deploy');
+    grunt.loadNpmTasks('sftp-deploy');
 };
