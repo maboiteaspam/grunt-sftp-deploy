@@ -33,7 +33,21 @@ module.exports = function(grunt) {
                 concurrency: 4,
                 progress: false
             },
-            ok_host: {
+            ok_connect_privateKey: {
+                auth: {
+                    host: 'localhost',
+                    port: 22,
+                    authKey: 'privateKey'
+                },
+                cache: 'sftpCache.json',
+                src: 'test/fixture/src',
+                dest: 'test/fixture/dest',
+                exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
+                serverSep: '/',
+                concurrency: 4,
+                progress: false
+            },
+            ok_transfer_privateKey: {
                 auth: {
                     host: 'localhost',
                     port: 22,

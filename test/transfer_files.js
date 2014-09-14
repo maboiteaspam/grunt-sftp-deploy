@@ -18,6 +18,7 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
 
     before(function(){
         grunt.file.mkdir("test/fixture/src")
+        grunt.file.write("test/fixture/src/test1","test1")
     });
 
     after(function(){
@@ -25,12 +26,9 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
         grunt.file.delete("test/fixture/dest")
     });
 
-    it('should connect correctly with private key', function(done) {
-        open_grunt(['sftp-deploy:ok_connect_privateKey'],function(code,stdout,stderr){
+    it('should transfer files correctly with private key', function(done) {
+        open_grunt(['sftp-deploy:ok_transfer_privateKey'],function(code,stdout,stderr){
             stdout.should.match(/Connection :: connect/);
-            stdout.should.match(/Directories done./);
-            stdout.should.match(/Transferred : 0 Mb/);
-            stdout.should.match(/Done, without errors./);
             done();
         })
     });

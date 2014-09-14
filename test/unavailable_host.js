@@ -16,6 +16,15 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
     this.slow(2500);
     this.timeout(10000);
 
+    before(function(){
+        grunt.file.mkdir("test/fixture/src")
+    });
+
+    after(function(){
+        grunt.file.delete("test/fixture/src")
+        grunt.file.delete("test/fixture/dest")
+    });
+
     it('should fail nicely when host is unknown', function(done) {
         open_grunt(['sftp-deploy:wrong_host'],function(code,stdout,stderr){
             stdout.should.match(/Fatal error: Connection :: error/);
