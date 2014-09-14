@@ -22,7 +22,7 @@ describe('grunt-sftp-deploy nicely fails to unavailable hosts', function () {
 
     after(function(){
         grunt.file.delete("test/fixture/src")
-        grunt.file.delete("maboiteaspam/grunt-sftp-deploy/test/fixture/dest")
+        grunt.file.delete("test/fixture/dest")
     });
 
     it('should connect correctly with private key', function(done) {

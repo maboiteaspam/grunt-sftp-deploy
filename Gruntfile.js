@@ -13,7 +13,7 @@ module.exports = function(grunt) {
                 },
                 cache: 'sftpCache.json',
                 src: 'test/fixture/src',
-                dest: 'maboiteaspam/grunt-sftp-deploy/test/fixture/dest',
+                dest: '~/maboiteaspam/grunt-sftp-deploy/test/fixture/dest',
                 exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
                 serverSep: '/',
                 concurrency: 4,
@@ -27,7 +27,7 @@ module.exports = function(grunt) {
                 },
                 cache: 'sftpCache.json',
                 src: 'test/fixture/src',
-                dest: 'maboiteaspam/grunt-sftp-deploy/test/fixture/dest',
+                dest: '~/maboiteaspam/grunt-sftp-deploy/test/fixture/dest',
                 exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
                 serverSep: '/',
                 concurrency: 4,
@@ -41,7 +41,7 @@ module.exports = function(grunt) {
                 },
                 cache: 'sftpCache.json',
                 src: 'test/fixture/src',
-                dest: 'maboiteaspam/grunt-sftp-deploy/test/fixture/dest',
+                dest: '~/maboiteaspam/grunt-sftp-deploy/test/fixture/dest',
                 exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
                 serverSep: '/',
                 concurrency: 4,
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
                 },
                 cache: 'sftpCache.json',
                 src: 'test/fixture/src',
-                dest: 'maboiteaspam/grunt-sftp-deploy/test/fixture/dest',
+                dest: '~/maboiteaspam/grunt-sftp-deploy/test/fixture/dest',
                 exclusions: ['/path/to/source/folder/**/.DS_Store', '/path/to/source/folder/**/Thumbs.db', 'dist/tmp'],
                 serverSep: '/',
                 concurrency: 4,
@@ -64,7 +64,6 @@ module.exports = function(grunt) {
         }
     });
 
-    grunt.file.mkdir("test/fixture/src")
     var auth = {
         "key1": {
             "username": "username1",
